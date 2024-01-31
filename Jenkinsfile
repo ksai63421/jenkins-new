@@ -2,7 +2,11 @@
 pipeline {
     agent { node { label 'agent' } }
     options {
+        timeout(time: 1, unit: 'HOURS') 
         ansiColor('xterm')
+    }
+    environment { 
+        USER = 'saikrishna'
     }
 
     stages {
@@ -13,6 +17,7 @@ pipeline {
                  ls -ltr
                  pwd
                  echo "hello from github push webhook event"
+                 printenv
                 '''
                 
             }

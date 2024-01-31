@@ -1,6 +1,9 @@
 //Jenkinsfile (Declarative Pipeline)
 pipeline {
     agent { node { label 'agent' } }
+    options {
+        ansiColor('xterm')
+    }
 
     stages {
         stage('Build') {
